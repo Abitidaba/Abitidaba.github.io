@@ -1237,3 +1237,30 @@ footer{
 }
 
 }
+.project-button{
+
+display:inline-block;
+
+margin-top:18px;
+
+padding:12px 28px;
+
+background:var(--primary-blue);
+
+color:white;
+
+text-decoration:none;
+
+border-radius:40px;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.project-button:hover{
+
+background:var(--primary-green);
+
+}
