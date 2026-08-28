@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Drip or Drown Irrigation</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <a href="index.html">
+
+                <img
+                    src="images/logo.png"
+                    alt="Drip or Drown Irrigation logo"
+                >
+
+            </a>
+
+            <h2>Drip or Drown</h2>
+
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+            <li><a href="services.html">Services</a></li>
+
+            <li><a href="projects.html">Projects</a></li>
+
+            <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<main>
+
+<section class="page-hero">
+
+    <div>
+
+        <h1>Request a Free Quote</h1>
+
+        <p>
+            Let's discuss your irrigation project.
+        </p>
+
+    </div>
+
+</section>
+
+<section id="contact">
+
+    <div class="section-heading">
+
+        <h2>Get In Touch</h2>
+
+        <p>
+            Contact Drip or Drown Irrigation to discuss your project.
+        </p>
+
+    </div>
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+
+            <h3>Contact Information</h3>
+
+            <p>
+                <strong>Phone:</strong>
+                <a href="tel:5879171366">587-917-1366</a>
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                <a href="mailto:Abitidaba@gmail.com">
+                    Abitidaba@gmail.com
+                </a>
+            </p>
+
+            <p>
+                <strong>Service Area:</strong>
+                Calgary, Chestermere and surrounding communities.
+            </p>
+
+        </div>
+
+        <form class="contact-form">
+
+            <input
+                type="text"
+                placeholder="Full Name"
+                required
+            >
+
+            <input
+                type="email"
+                placeholder="Email Address"
+                required
+            >
+
+            <input
+                type="tel"
+                placeholder="Phone Number"
+            >
+
+            <select required>
+
+                <option value="">
+                    Select a Service
+                </option>
+
+                <option>
+                    Sprinkler Installation
+                </option>
+
+                <option>
+                    Drip Irrigation
+                </option>
+
+                <option>
+                    Repairs
+                </option>
+
+                <option>
+                    Winterization
+                </option>
+
+                <option>
+                    Smart Controller
+                </option>
+
+            </select>
+
+            <textarea
+                rows="7"
+                placeholder="Tell us about your project..."
+            ></textarea>
+
+            <button
+                type="submit"
+                class="primary-btn"
+            >
+                Request a Free Quote
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+
+    <div class="copyright">
+
+        <p>
+            © 2026 Drip or Drown Irrigation. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
