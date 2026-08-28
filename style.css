@@ -1259,6 +1259,88 @@ transition:.3s;
 
 }
 
+/* ==========================================
+   MULTI-PAGE WEBSITE
+========================================== */
+
+.page-hero{
+
+    min-height:45vh;
+
+    padding-top:160px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            rgba(11,47,107,.75),
+            rgba(11,91,43,.70)
+        ),
+        url("images/hero.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.page-hero h1{
+
+    font-size:58px;
+
+    font-weight:800;
+
+    margin-bottom:15px;
+
+}
+
+.page-hero p{
+
+    font-size:21px;
+
+}
+
+/* Better page spacing */
+
+main{
+
+    min-height:70vh;
+
+}
+
+/* Mobile page hero */
+
+@media(max-width:600px){
+
+    .page-hero{
+
+        min-height:40vh;
+
+        padding:130px 20px 60px;
+
+    }
+
+    .page-hero h1{
+
+        font-size:40px;
+
+    }
+
+    .page-hero p{
+
+        font-size:17px;
+
+    }
+
+}
 .project-button:hover{
 
 background:var(--primary-green);
