@@ -1,206 +1,109 @@
-/* ==========================================
+/* =========================================================
    DRIP OR DROWN IRRIGATION
-   SCRIPT.JS
-========================================== */
+   WEBSITE JAVASCRIPT
+========================================================= */
 
-/* ==========================
-   SMOOTH SCROLLING
-========================== */
+document.addEventListener("DOMContentLoaded", function () {
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-    anchor.addEventListener("click", function (e) {
+    /* =====================================================
+       MOBILE NAVIGATION
+    ===================================================== */
 
-        e.preventDefault();
+    const menuButton = document.querySelector(".mobile-menu-button");
+    const navigation = document.querySelector(".main-nav");
 
-        const target = document.querySelector(this.getAttribute("href"));
+    if (menuButton && navigation) {
 
-        if(target){
+        menuButton.addEventListener("click", function () {
 
-            target.scrollIntoView({
+            navigation.classList.toggle("mobile-open");
 
-                behavior:"smooth"
+            const isOpen =
+                navigation.classList.contains("mobile-open");
+
+            menuButton.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation" : "Open navigation"
+            );
+
+            menuButton.textContent = isOpen ? "✕" : "☰";
+
+        });
+
+
+        /* Close mobile menu after clicking a link */
+
+        const navigationLinks =
+            navigation.querySelectorAll("a");
+
+        navigationLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                navigation.classList.remove("mobile-open");
+
+                menuButton.textContent = "☰";
+
+                menuButton.setAttribute(
+                    "aria-label",
+                    "Open navigation"
+                );
 
             });
 
-        }
-
-    });
-
-});
-
-/* ==========================
-   STICKY NAVBAR
-========================== */
-
-const header = document.querySelector("header");
-
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 60){
-
-        header.style.background = "rgba(11,47,107,.97)";
-
-        header.style.boxShadow = "0 8px 25px rgba(0,0,0,.25)";
+        });
 
     }
 
-    else{
 
-        header.style.background = "rgba(11,47,107,.90)";
+    /* =====================================================
+       NAVIGATION SHADOW ON SCROLL
+    ===================================================== */
 
-        header.style.boxShadow = "0 8px 20px rgba(0,0,0,.15)";
+    const header = document.querySelector(".main-header");
 
-    }
+    if (header) {
 
-});
+        function updateHeader() {
 
-/* ==========================
-   SCROLL REVEAL
-========================== */
+            if (window.scrollY > 20) {
 
-const revealElements = document.querySelectorAll(
+                header.style.boxShadow =
+                    "0 5px 20px rgba(0, 0, 0, 0.10)";
 
-".service-card,.project-card,.why-card,.process-step,.skill-box,.area-card,.testimonial-card"
+            } else {
 
-);
+                header.style.boxShadow =
+                    "none";
 
-const reveal = () => {
-
-    const trigger = window.innerHeight * .88;
-
-    revealElements.forEach(el=>{
-
-        const top = el.getBoundingClientRect().top;
-
-        if(top < trigger){
-
-            el.classList.add("show");
+            }
 
         }
 
-    });
+        window.addEventListener(
+            "scroll",
+            updateHeader
+        );
 
-}
-
-window.addEventListener("scroll",reveal);
-
-window.addEventListener("load",reveal);
-
-/* ==========================
-   ACTIVE NAVIGATION
-========================== */
-
-const sections = document.querySelectorAll("section");
-
-const navLinks = document.querySelectorAll(".nav-links a");
-
-window.addEventListener("scroll",()=>{
-
-    let current="";
-
-    sections.forEach(section=>{
-
-        const top = section.offsetTop-120;
-
-        const height = section.clientHeight;
-
-        if(pageYOffset>=top){
-
-            current = section.getAttribute("id");
-
-        }
-
-    });
-
-    navLinks.forEach(link=>{
-
-        link.classList.remove("active");
-
-        if(link.getAttribute("href")==="#" + current){
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
-
-/* ==========================
-   CONTACT FORM
-========================== */
-
-const form = document.querySelector(".contact-form");
-
-if(form){
-
-form.addEventListener("submit",function(e){
-
-    e.preventDefault();
-
-    alert(
-
-"Thank you for contacting Drip or Drown Irrigation! We will get back to you as soon as possible."
-
-    );
-
-    form.reset();
-
-});
-
-}
-
-/* ==========================
-   SCROLL TO TOP BUTTON
-========================== */
-
-const topButton = document.createElement("button");
-
-topButton.innerHTML="▲";
-
-topButton.className="topButton";
-
-document.body.appendChild(topButton);
-
-window.addEventListener("scroll",()=>{
-
-    if(window.scrollY>400){
-
-        topButton.style.display="block";
+        updateHeader();
 
     }
 
-    else{
 
-        topButton.style.display="none";
+    /* =====================================================
+       CURRENT YEAR
+    ===================================================== */
+
+    const yearElement =
+        document.getElementById("current-year");
+
+    if (yearElement) {
+
+        yearElement.textContent =
+            new Date().getFullYear();
 
     }
 
-});
-
-topButton.addEventListener("click",()=>{
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
 
 });
-
-/* ==========================
-   DYNAMIC COPYRIGHT
-========================== */
-
-const copyright = document.querySelector(".copyright p");
-
-if(copyright){
-
-copyright.innerHTML =
-
-`© ${new Date().getFullYear()} Drip or Drown Irrigation. All Rights Reserved.`;
-
-}
