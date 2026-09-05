@@ -107,3 +107,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
+// =========================================
+// FAQ ACCORDION
+// =========================================
+
+const faqQuestions = document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach(function (question) {
+
+    question.addEventListener("click", function () {
+
+        const faqItem = question.parentElement;
+        const answer = faqItem.querySelector(".faq-answer");
+
+        const isOpen = faqItem.classList.contains("active");
+
+
+        // Close other FAQ questions
+
+        document.querySelectorAll(".faq-item").forEach(function (item) {
+
+            item.classList.remove("active");
+
+            const itemQuestion = item.querySelector(".faq-question");
+            const itemAnswer = item.querySelector(".faq-answer");
+
+            itemQuestion.setAttribute("aria-expanded", "false");
+
+            itemAnswer.style.maxHeight = null;
+
+        });
+
+
+        // Open selected question
+
+        if (!isOpen) {
+
+            faqItem.classList.add("active");
+
+            question.setAttribute("aria-expanded", "true");
+
+            answer.style.maxHeight = answer.scrollHeight + "px";
+
+        }
+
+    });
+
+});
