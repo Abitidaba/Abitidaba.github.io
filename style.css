@@ -1107,3 +1107,93 @@ button:focus-visible {
     outline: 3px solid var(--light-green);
     outline-offset: 3px;
 }
+/* =========================================================
+   ABOUT PAGE
+========================================================= */
+
+.page-hero {
+    position: relative;
+
+    min-height: 430px;
+
+    margin-top: 120px;
+
+    display: flex;
+    align-items: center;
+
+    background-image: url("images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.page-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 35, 75, 0.88),
+            rgba(5, 35, 75, 0.45)
+        );
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(1200px, 90%);
+    margin: 0 auto;
+
+    color: white;
+}
+
+.page-hero-content h1 {
+    margin-bottom: 15px;
+
+    font-size: clamp(42px, 6vw, 65px);
+    line-height: 1.1;
+}
+
+.page-hero-content p:not(.section-label) {
+    max-width: 650px;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 17px;
+}
+
+.about-main-image {
+    width: 100%;
+    max-height: 600px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    box-shadow: var(--shadow);
+}
+
+.about-page-content {
+    align-items: center;
+}
+
+.about-page-content .section-heading p:not(.section-label) {
+    margin-bottom: 16px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .page-hero {
+        min-height: 350px;
+        margin-top: 106px;
+    }
+
+    .page-hero-content h1 {
+        font-size: 42px;
+    }
+
+}
