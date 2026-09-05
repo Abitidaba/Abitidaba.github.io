@@ -1494,6 +1494,23 @@ button:focus-visible {
     font-family: inherit;
     font-size: 15px;
     margin-top: 5px;
+    background: var(--green);
+    color: #ffffff;
+    padding: 14px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.quote-submit:hover {
+    background: var(--dark-green);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.quote-submit:active {
+    transform: translateY(0);
+}
 }
 
 .form-disclaimer {
