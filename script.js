@@ -1,190 +1,209 @@
-/* =========================================================
+/* =========================================
    DRIP OR DROWN IRRIGATION
-   WEBSITE JAVASCRIPT
-========================================================= */
+   JAVASCRIPT
+========================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
 
-    /* =====================================================
-       MOBILE NAVIGATION
-    ===================================================== */
+    /* =====================================
+       CURRENT YEAR
+    ===================================== */
 
-    const menuButton = document.querySelector(".mobile-menu-button");
-    const navigation = document.querySelector(".main-nav");
+    const year = document.getElementById("current-year");
 
-    if (menuButton && navigation) {
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
+
+
+    /* =====================================
+       MOBILE MENU
+    ===================================== */
+
+    const menuButton =
+        document.querySelector(".mobile-menu-button");
+
+    const mainNav =
+        document.querySelector(".main-nav");
+
+
+    if (menuButton && mainNav) {
 
         menuButton.addEventListener("click", function () {
 
-            navigation.classList.toggle("mobile-open");
-
             const isOpen =
-                navigation.classList.contains("mobile-open");
+                mainNav.classList.toggle("mobile-open");
 
             menuButton.setAttribute(
-                "aria-label",
-                isOpen ? "Close navigation" : "Open navigation"
+                "aria-expanded",
+                isOpen ? "true" : "false"
             );
 
-            menuButton.textContent = isOpen ? "✕" : "☰";
-
-        });
-
-
-        /* Close mobile menu after clicking a link */
-
-        const navigationLinks =
-            navigation.querySelectorAll("a");
-
-        navigationLinks.forEach(function (link) {
-
-            link.addEventListener("click", function () {
-
-                navigation.classList.remove("mobile-open");
-
-                menuButton.textContent = "☰";
-
-                menuButton.setAttribute(
-                    "aria-label",
-                    "Open navigation"
-                );
-
-            });
-
         });
 
     }
 
 
-    /* =====================================================
-       NAVIGATION SHADOW ON SCROLL
-    ===================================================== */
+    /* =====================================
+       MOBILE SERVICES DROPDOWN
+    ===================================== */
 
-    const header = document.querySelector(".main-header");
+    const dropdownToggle =
+        document.querySelector(".dropdown-toggle");
 
-    if (header) {
+    if (dropdownToggle) {
 
-        function updateHeader() {
+        dropdownToggle.addEventListener(
+            "click",
+            function (event) {
 
-            if (window.scrollY > 20) {
+                if (window.innerWidth <= 950) {
 
-                header.style.boxShadow =
-                    "0 5px 20px rgba(0, 0, 0, 0.10)";
+                    event.preventDefault();
 
-            } else {
+                    const dropdown =
+                        this.closest(".nav-dropdown");
 
-                header.style.boxShadow =
-                    "none";
+                    dropdown.classList.toggle(
+                        "mobile-open"
+                    );
+
+                }
 
             }
-
-        }
-
-        window.addEventListener(
-            "scroll",
-            updateHeader
         );
 
-        updateHeader();
-
     }
 
 
-    /* =====================================================
-       CURRENT YEAR
-    ===================================================== */
+    /* =====================================
+       HEADER SHADOW ON SCROLL
+    ===================================== */
 
-    const yearElement =
-        document.getElementById("current-year");
+    const header =
+        document.querySelector(".main-header");
 
-    if (yearElement) {
+    function updateHeader() {
 
-        yearElement.textContent =
-            new Date().getFullYear();
+        if (!header) return;
 
-    }
-
-
-});
-// =========================================
-// FAQ ACCORDION
-// =========================================
-
-const faqQuestions = document.querySelectorAll(".faq-question");
-
-faqQuestions.forEach(function (question) {
-
-    question.addEventListener("click", function () {
-
-        const faqItem = question.parentElement;
-        const answer = faqItem.querySelector(".faq-answer");
-
-        const isOpen = faqItem.classList.contains("active");
-
-
-        // Close other FAQ questions
-
-        document.querySelectorAll(".faq-item").forEach(function (item) {
-
-            item.classList.remove("active");
-
-            const itemQuestion = item.querySelector(".faq-question");
-            const itemAnswer = item.querySelector(".faq-answer");
-
-            itemQuestion.setAttribute("aria-expanded", "false");
-
-            itemAnswer.style.maxHeight = null;
-
-        });
-
-
-        // Open selected question
-
-        if (!isOpen) {
-
-            faqItem.classList.add("active");
-
-            question.setAttribute("aria-expanded", "true");
-
-            answer.style.maxHeight = answer.scrollHeight + "px";
-
+        if (window.scrollY > 20) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
         }
+
+    }
+
+    updateHeader();
+
+    window.addEventListener(
+        "scroll",
+        updateHeader
+    );
+
+
+    /* =====================================
+       FAQ ACCORDION
+    ===================================== */
+
+    const faqQuestions =
+        document.querySelectorAll(".faq-question");
+
+
+    faqQuestions.forEach(function (question) {
+
+        question.addEventListener(
+            "click",
+            function () {
+
+                const faqItem =
+                    question.parentElement;
+
+                const answer =
+                    faqItem.querySelector(".faq-answer");
+
+                const isOpen =
+                    faqItem.classList.contains("active");
+
+
+                document
+                    .querySelectorAll(".faq-item")
+                    .forEach(function (item) {
+
+                        item.classList.remove("active");
+
+                        const itemQuestion =
+                            item.querySelector(".faq-question");
+
+                        const itemAnswer =
+                            item.querySelector(".faq-answer");
+
+                        if (itemQuestion) {
+                            itemQuestion.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+                        }
+
+                        if (itemAnswer) {
+                            itemAnswer.style.maxHeight = null;
+                        }
+
+                    });
+
+
+                if (!isOpen) {
+
+                    faqItem.classList.add("active");
+
+                    question.setAttribute(
+                        "aria-expanded",
+                        "true"
+                    );
+
+                    answer.style.maxHeight =
+                        answer.scrollHeight + "px";
+
+                }
+
+            }
+        );
 
     });
 
-});
-// =========================================
-// PAGE TRANSITION
-// =========================================
 
-document.addEventListener("DOMContentLoaded", function () {
+    /* =====================================
+       PAGE TRANSITION
+    ===================================== */
 
-    // Create transition screen
+    const transition =
+        document.createElement("div");
 
-    const transition = document.createElement("div");
-
-    transition.className = "page-transition";
+    transition.className =
+        "page-transition";
 
     transition.innerHTML = `
+
         <div class="page-transition-content">
 
             <img
                 src="images/logo.png"
                 alt="Drip or Drown Irrigation"
-                class="page-transition-logo">
+                class="page-transition-logo"
+            >
 
             <p class="page-transition-text">
                 Drip or Drown Irrigation
             </p>
 
         </div>
+
     `;
 
     document.body.prepend(transition);
 
-
-    // Hide transition after page loads
 
     window.setTimeout(function () {
 
@@ -193,19 +212,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 350);
 
 
-    // Handle internal page links
+    /* =====================================
+       PAGE LINK TRANSITIONS
+    ===================================== */
 
-    const links = document.querySelectorAll("a");
+    const pageLinks =
+        document.querySelectorAll("a");
 
-    links.forEach(function (link) {
 
-        const destination = link.getAttribute("href");
+    pageLinks.forEach(function (link) {
 
-        if (!destination) {
-            return;
-        }
+        const destination =
+            link.getAttribute("href");
 
-        // Ignore telephone, email and external links
+
+        if (!destination) return;
 
         if (
             destination.startsWith("tel:") ||
@@ -218,20 +239,31 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        link.addEventListener("click", function (event) {
+        link.addEventListener(
+            "click",
+            function (event) {
 
-            event.preventDefault();
+                event.preventDefault();
 
-            transition.classList.remove("hidden");
+                transition.classList.remove(
+                    "hidden"
+                );
 
-            window.setTimeout(function () {
 
-                window.location.href = destination;
+                window.setTimeout(
+                    function () {
 
-            }, 350);
+                        window.location.href =
+                            destination;
 
-        });
+                    },
+                    350
+                );
+
+            }
+        );
 
     });
+
 
 });
