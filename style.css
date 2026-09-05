@@ -1346,3 +1346,54 @@ main{
 background:var(--primary-green);
 
 }
+
+/* ================================
+   TOP CONTACT BAR
+================================ */
+
+.top-contact-bar {
+    width: 100%;
+    background: #0B2F6B;
+    color: #ffffff;
+    padding: 8px 5%;
+    font-size: 14px;
+}
+
+.top-contact-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 25px;
+}
+
+.top-contact-content span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.top-contact-content a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.top-contact-content a:hover {
+    color: #8CC63F;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .top-contact-bar {
+        padding: 7px 15px;
+        font-size: 12px;
+    }
+
+    .top-contact-content {
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+}
