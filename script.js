@@ -154,3 +154,84 @@ faqQuestions.forEach(function (question) {
     });
 
 });
+// =========================================
+// PAGE TRANSITION
+// =========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Create transition screen
+
+    const transition = document.createElement("div");
+
+    transition.className = "page-transition";
+
+    transition.innerHTML = `
+        <div class="page-transition-content">
+
+            <img
+                src="images/logo.png"
+                alt="Drip or Drown Irrigation"
+                class="page-transition-logo">
+
+            <p class="page-transition-text">
+                Drip or Drown Irrigation
+            </p>
+
+        </div>
+    `;
+
+    document.body.prepend(transition);
+
+
+    // Hide transition after page loads
+
+    window.setTimeout(function () {
+
+        transition.classList.add("hidden");
+
+    }, 350);
+
+
+    // Handle internal page links
+
+    const links = document.querySelectorAll("a");
+
+    links.forEach(function (link) {
+
+        const destination = link.getAttribute("href");
+
+        if (!destination) {
+            return;
+        }
+
+        // Ignore telephone, email and external links
+
+        if (
+            destination.startsWith("tel:") ||
+            destination.startsWith("mailto:") ||
+            destination.startsWith("http") ||
+            destination.startsWith("#") ||
+            destination.startsWith("javascript:")
+        ) {
+            return;
+        }
+
+
+        link.addEventListener("click", function (event) {
+
+            event.preventDefault();
+
+            transition.classList.remove("hidden");
+
+            window.setTimeout(function () {
+
+                window.location.href = destination;
+
+            }, 350);
+
+        });
+
+    });
+
+});
