@@ -1197,3 +1197,155 @@ button:focus-visible {
     }
 
 }
+/* =========================================================
+   PROJECT GALLERY
+========================================================= */
+
+.project-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.gallery-project {
+    display: grid;
+
+    grid-template-columns: 1.15fr 0.85fr;
+
+    min-height: 430px;
+
+    overflow: hidden;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.gallery-project.reverse {
+    grid-template-columns: 0.85fr 1.15fr;
+}
+
+.gallery-project.reverse .gallery-image {
+    order: 2;
+}
+
+.gallery-project.reverse .gallery-content {
+    order: 1;
+}
+
+.gallery-image {
+    overflow: hidden;
+
+    min-height: 430px;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.gallery-project:hover .gallery-image img {
+    transform: scale(1.04);
+}
+
+.gallery-content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 55px;
+}
+
+.gallery-content h2 {
+    margin-bottom: 18px;
+
+    color: var(--dark-blue);
+
+    font-size: clamp(27px, 3vw, 38px);
+
+    line-height: 1.2;
+}
+
+.gallery-content > p:not(.project-type) {
+    margin-bottom: 25px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+.project-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.project-tags span {
+    padding: 7px 12px;
+
+    background: var(--light-blue);
+
+    border-radius: 4px;
+
+    color: var(--blue);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* Project gallery mobile */
+
+@media (max-width: 900px) {
+
+    .gallery-project,
+    .gallery-project.reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-project.reverse .gallery-image,
+    .gallery-project.reverse .gallery-content {
+        order: initial;
+    }
+
+    .gallery-image {
+        min-height: 320px;
+        height: 320px;
+    }
+
+    .gallery-content {
+        padding: 40px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .project-gallery {
+        gap: 35px;
+    }
+
+    .gallery-image {
+        min-height: 250px;
+        height: 250px;
+    }
+
+    .gallery-content {
+        padding: 30px 25px;
+    }
+
+}
