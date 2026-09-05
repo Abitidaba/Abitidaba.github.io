@@ -1,47 +1,773 @@
-/* =========================================================
-   SERVICES PAGE
-========================================================= */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.service-list {
-    list-style: none;
+    <title>Services | Drip or Drown Irrigation</title>
 
-    margin-top: 20px;
-    padding-top: 18px;
+    <meta name="description" content="Professional irrigation installation, repairs, drip irrigation, smart controllers, spring startup and winterization services in Calgary and surrounding areas.">
 
-    border-top: 1px solid var(--border);
-}
+    <link rel="stylesheet" href="style.css">
 
-.service-list li {
-    position: relative;
+    <link rel="icon" type="image/png" href="images/logo.png">
 
-    padding-left: 20px;
-    margin-bottom: 8px;
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    color: var(--muted);
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
 
-    font-size: 13px;
-}
+<body>
 
-.service-list li::before {
-    content: "✓";
+    <!-- TOP CONTACT BAR -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
 
-    position: absolute;
-    left: 0;
-    top: 0;
+            <a href="tel:5879171366">
+                📞 587-917-1366
+            </a>
 
-    color: var(--green);
+            <a href="mailto:dripordrownirrigation@outlook.com">
+                ✉ dripordrownirrigation@outlook.com
+            </a>
 
-    font-weight: 800;
-}
+        </div>
+    </div>
 
-.service-card {
-    height: 100%;
-}
 
-@media (max-width: 600px) {
+    <!-- NAVIGATION -->
+    <header class="main-header">
 
-    .service-list li {
-        font-size: 12px;
-    }
+        <div class="container nav-container">
 
-}
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Drip or Drown Irrigation logo">
+            </a>
+
+            <button
+                class="mobile-menu-button"
+                type="button"
+                aria-label="Open navigation">
+                ☰
+            </button>
+
+            <nav class="main-nav">
+
+                <a href="index.html">Home</a>
+
+                <a href="about.html">About</a>
+
+                <a href="services.html" class="active">Services</a>
+
+                <a href="projects.html">Projects</a>
+
+                <a href="faq.html">FAQ</a>
+
+                <a href="contact.html" class="nav-quote">
+                    Get a Quote
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+
+        <div class="container">
+
+            <p class="eyebrow">
+                WHAT WE DO
+            </p>
+
+            <h1>
+                Irrigation Services
+            </h1>
+
+            <p>
+                Reliable irrigation solutions designed to keep your
+                landscape healthy, efficient and looking its best.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+    <main>
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">
+                        OUR SERVICES
+                    </p>
+
+                    <h2>
+                        Complete Irrigation Solutions
+                    </h2>
+
+                    <p>
+                        From a brand-new irrigation system to seasonal
+                        maintenance and repairs, Drip or Drown Irrigation
+                        provides practical solutions for residential
+                        properties and landscaping projects.
+                    </p>
+
+                </div>
+
+
+                <div class="service-grid">
+
+
+                    <!-- SERVICE 1 -->
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            💧
+                        </div>
+
+                        <h3>
+                            Irrigation Installation
+                        </h3>
+
+                        <p>
+                            Professionally planned and installed irrigation
+                            systems designed around your property's landscape,
+                            water requirements and coverage needs.
+                        </p>
+
+                        <ul class="service-list">
+
+                            <li>
+                                Full irrigation system installation
+                            </li>
+
+                            <li>
+                                Zone planning and layout
+                            </li>
+
+                            <li>
+                                Sprinkler head installation
+                            </li>
+
+                            <li>
+                                Underground pipe installation
+                            </li>
+
+                            <li>
+                                Controller setup
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- SERVICE 2 -->
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            🔧
+                        </div>
+
+                        <h3>
+                            Repairs & Troubleshooting
+                        </h3>
+
+                        <p>
+                            We diagnose and repair common irrigation problems
+                            to restore proper system performance and prevent
+                            unnecessary water waste.
+                        </p>
+
+                        <ul class="service-list">
+
+                            <li>
+                                Broken sprinkler heads
+                            </li>
+
+                            <li>
+                                Leaking pipes and fittings
+                            </li>
+
+                            <li>
+                                Valve problems
+                            </li>
+
+                            <li>
+                                Poor coverage
+                            </li>
+
+                            <li>
+                                Controller troubleshooting
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- SERVICE 3 -->
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            🌱
+                        </div>
+
+                        <h3>
+                            Drip Irrigation
+                        </h3>
+
+                        <p>
+                            Efficient drip irrigation systems provide water
+                            directly where plants need it, making them ideal
+                            for gardens, flower beds, planters and landscaping.
+                        </p>
+
+                        <ul class="service-list">
+
+                            <li>
+                                Garden irrigation
+                            </li>
+
+                            <li>
+                                Raised beds
+                            </li>
+
+                            <li>
+                                Flower beds
+                            </li>
+
+                            <li>
+                                Planters
+                            </li>
+
+                            <li>
+                                Water-efficient irrigation
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- SERVICE 4 -->
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            📱
+                        </div>
+
+                        <h3>
+                            Smart Controllers
+                        </h3>
+
+                        <p>
+                            Upgrade your irrigation system with modern
+                            controllers that make scheduling and managing
+                            watering easier and more efficient.
+                        </p>
+
+                        <ul class="service-list">
+
+                            <li>
+                                Smart controller installation
+                            </li>
+
+                            <li>
+                                Wi-Fi controller setup
+                            </li>
+
+                            <li>
+                                Mobile control
+                            </li>
+
+                            <li>
+                                Custom watering schedules
+                            </li>
+
+                            <li>
+                                Controller programming
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- SERVICE 5 -->
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            🌷
+                        </div>
+
+                        <h3>
+                            Spring Startup
+                        </h3>
+
+                        <p>
+                            Get your irrigation system ready for the growing
+                            season with a complete spring startup and system
+                            inspection.
+                        </p>
+
+                        <ul class="service-list">
+
+                            <li>
+                                System activation
+                            </li>
+
+                            <li>
+                                Zone-by-zone inspection
+                            </li>
+
+                            <li>
+                                Sprinkler head testing
+                            </li>
+
+                            <li>
+                                Leak identification
+                            </li>
+
+                            <li>
+                                Controller programming
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- SERVICE 6 -->
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            ❄️
+                        </div>
+
+                        <h3>
+                            Winterization
+                        </h3>
+
+                        <p>
+                            Proper winterization helps protect your irrigation
+                            system from Alberta's freezing temperatures and
+                            reduces the risk of costly damage.
+                        </p>
+
+                        <ul class="service-list">
+
+                            <li>
+                                System shutdown
+                            </li>
+
+                            <li>
+                                Compressed-air blowout
+                            </li>
+
+                            <li>
+                                Zone inspection
+                            </li>
+
+                            <li>
+                                Valve protection
+                            </li>
+
+                            <li>
+                                Winter preparation
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROCESS -->
+        <section class="section section-light">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">
+                        OUR PROCESS
+                    </p>
+
+                    <h2>
+                        Simple. Professional. Reliable.
+                    </h2>
+
+                    <p>
+                        We focus on understanding your property first,
+                        then designing an irrigation solution that makes
+                        sense for your landscape.
+                    </p>
+
+                </div>
+
+
+                <div class="process-grid">
+
+
+                    <article class="process-card">
+
+                        <span class="process-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Assess
+                        </h3>
+
+                        <p>
+                            We evaluate your property, landscaping,
+                            water source and irrigation requirements.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-card">
+
+                        <span class="process-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Plan
+                        </h3>
+
+                        <p>
+                            We develop a practical system layout focused
+                            on coverage, efficiency and reliability.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-card">
+
+                        <span class="process-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Install
+                        </h3>
+
+                        <p>
+                            Your irrigation system is installed with
+                            attention to proper placement and operation.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-card">
+
+                        <span class="process-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Test
+                        </h3>
+
+                        <p>
+                            We test each zone and make adjustments to
+                            ensure your system is operating properly.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BENEFITS -->
+        <section class="section">
+
+            <div class="container">
+
+                <div class="two-column-section">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            WHY IRRIGATION?
+                        </p>
+
+                        <h2>
+                            Water Smarter. Grow Better.
+                        </h2>
+
+                        <p>
+                            A properly designed irrigation system can provide
+                            consistent watering while reducing unnecessary
+                            water use and saving you time.
+                        </p>
+
+                        <p>
+                            Instead of manually moving sprinklers around your
+                            property, an automated irrigation system can take
+                            care of watering according to a schedule designed
+                            for your landscape.
+                        </p>
+
+                    </div>
+
+
+                    <div class="benefits-list">
+
+                        <div class="benefit-item">
+
+                            <strong>
+                                Efficient Watering
+                            </strong>
+
+                            <span>
+                                Deliver water where it is needed.
+                            </span>
+
+                        </div>
+
+
+                        <div class="benefit-item">
+
+                            <strong>
+                                Healthier Landscapes
+                            </strong>
+
+                            <span>
+                                Consistent watering supports healthy plants
+                                and grass.
+                            </span>
+
+                        </div>
+
+
+                        <div class="benefit-item">
+
+                            <strong>
+                                Less Maintenance
+                            </strong>
+
+                            <span>
+                                Automated schedules reduce manual watering.
+                            </span>
+
+                        </div>
+
+
+                        <div class="benefit-item">
+
+                            <strong>
+                                Greater Convenience
+                            </strong>
+
+                            <span>
+                                Spend less time worrying about watering.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SERVICE AREA -->
+        <section class="service-area">
+
+            <div class="container">
+
+                <div>
+
+                    <p class="eyebrow">
+                        SERVICE AREA
+                    </p>
+
+                    <h2>
+                        Serving Calgary & Surrounding Areas
+                    </h2>
+
+                    <p>
+                        Drip or Drown Irrigation provides irrigation services
+                        throughout Calgary and surrounding communities.
+                    </p>
+
+                </div>
+
+
+                <a href="contact.html" class="btn btn-light">
+                    Request a Quote
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL CTA -->
+        <section class="section">
+
+            <div class="container">
+
+                <div class="final-cta">
+
+                    <p class="eyebrow">
+                        READY TO GET STARTED?
+                    </p>
+
+                    <h2>
+                        Let's Build a Better Irrigation System
+                    </h2>
+
+                    <p>
+                        Tell us about your property and what you're looking
+                        to accomplish. We'll help determine the right
+                        irrigation solution for you.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="contact.html" class="btn btn-primary">
+                            Get a Free Quote
+                        </a>
+
+                        <a href="tel:5879171366" class="btn btn-outline">
+                            Call 587-917-1366
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+
+            <div>
+
+                <img
+                    src="images/logo.png"
+                    alt="Drip or Drown Irrigation logo"
+                    class="footer-logo">
+
+                <p>
+                    Professional irrigation solutions for healthy,
+                    efficient and well-maintained landscapes.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+                <a href="projects.html">
+                    Projects
+                </a>
+
+                <a href="faq.html">
+                    FAQ
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Contact
+                </h3>
+
+                <a href="tel:5879171366">
+                    587-917-1366
+                </a>
+
+                <a href="mailto:dripordrownirrigation@outlook.com">
+                    dripordrownirrigation@outlook.com
+                </a>
+
+                <p>
+                    Calgary, Alberta
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>
+                    © <span id="current-year"></span>
+                    Drip or Drown Irrigation. All rights reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
