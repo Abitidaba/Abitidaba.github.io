@@ -1648,3 +1648,81 @@ button:focus-visible {
     }
 
 }
+/* =========================================
+   FULL-PAGE HERO BACKGROUNDS
+========================================= */
+
+.page-hero {
+    position: relative;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 30, 55, 0.62);
+}
+
+.page-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-hero h1,
+.page-hero p,
+.page-hero .eyebrow {
+    color: #ffffff;
+}
+
+
+/* ABOUT */
+
+body.about-page .page-hero {
+    background-image: url("images/Project1.jpg");
+}
+
+
+/* SERVICES */
+
+body.services-page .page-hero {
+    background-image: url("images/Project2.jpg");
+}
+
+
+/* PROJECTS */
+
+body.projects-page .page-hero {
+    background-image: url("images/Project3.jpg");
+}
+
+
+/* FAQ */
+
+body.faq-page .page-hero {
+    background-image: url("images/Project4.jpg");
+}
+
+
+/* CONTACT */
+
+body.contact-page .page-hero {
+    background-image: url("images/Project5.jpg");
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .page-hero {
+        min-height: 300px;
+    }
+
+}
