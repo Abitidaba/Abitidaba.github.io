@@ -12,3 +12,43 @@ document.querySelectorAll(".faq-item").forEach(x=>{x.classList.remove("active");
 if(!open){item.classList.add("active");this.setAttribute("aria-expanded","true");answer.style.maxHeight=answer.scrollHeight+"px"}
 }));
 });
+// Homepage package accordions and service/package pre-selection
+(function(){
+  document.addEventListener('DOMContentLoaded',function(){
+    document.querySelectorAll('.package-toggle').forEach(function(toggle){
+      toggle.addEventListener('click',function(){
+        const card=toggle.closest('.package-card');
+        const details=card.querySelector('.package-details');
+        const wasOpen=card.classList.contains('active');
+        document.querySelectorAll('.package-card').forEach(function(other){
+          other.classList.remove('active');
+          other.querySelector('.package-toggle').setAttribute('aria-expanded','false');
+          other.querySelector('.package-details').style.maxHeight=null;
+        });
+        if(!wasOpen){
+          card.classList.add('active');
+          toggle.setAttribute('aria-expanded','true');
+          details.style.maxHeight=details.scrollHeight+'px';
+        }
+      });
+    });
+
+    document.querySelectorAll('[data-service]').forEach(function(link){
+      link.addEventListener('click',function(){
+        const select=document.getElementById('booking-service');
+        if(select){
+          const requested=link.getAttribute('data-service');
+          const option=Array.from(select.options).find(function(o){return o.text===requested;});
+          if(option) select.value=requested;
+        }
+      });
+    });
+
+    document.querySelectorAll('[data-package]').forEach(function(link){
+      link.addEventListener('click',function(){
+        const select=document.getElementById('booking-package');
+        if(select) select.value=link.getAttribute('data-package');
+      });
+    });
+  });
+})();
